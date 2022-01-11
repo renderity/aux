@@ -1,0 +1,60 @@
+{
+	"variables":
+	{
+		"gcc-x64":
+		{
+			"REPS": "/home/denis/reps"
+		},
+
+		"clang-wasm32":
+		{
+			"REPS": "/home/denis/reps",
+			"FLAGS_ADD": "-matomics -mbulk-memory"
+		},
+
+		"clang-wasm64":
+		{
+			"REPS": "/home/denis/reps",
+			"FLAGS_ADD": "-matomics -mbulk-memory"
+		}
+	},
+
+	"entries":
+	{
+		"type": "static",
+
+		"name": "aux",
+
+		"include_directories": "$(REPS)/renderity",
+
+		"flags": "$(STD_20) $(NO_LINK) $(VERBOSE) $(OPT_FASTX) $(SSE) $(FLAGS_ADD) -fPIC",
+
+		"watch_files":
+		[
+			{
+				"file": "$(SRC)/meas/meas.cpp",
+				"watch_files": "$(SRC)/meas/meas.h"
+			},
+
+			{
+				"file": "$(SRC)/transition/transition.cpp",
+
+				"watch_files":
+				[
+					"$(SRC)/transition-stack/transition-stack.h",
+					"$(SRC)/transition/transition.h"
+				]
+			},
+
+			{
+				"file": "$(SRC)/transition-stack/transition-stack.cpp",
+
+				"watch_files":
+				[
+					"$(SRC)/transition/transition.h",
+					"$(SRC)/transition-stack/transition-stack.h"
+				]
+			}
+		]
+	}
+}
