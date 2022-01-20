@@ -3,8 +3,7 @@
 
 
 
-// size_t
-#include <cstddef>
+#include <cstddef> // size_t
 #include <vector>
 
 #ifndef __wasm__

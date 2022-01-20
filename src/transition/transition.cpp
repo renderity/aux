@@ -85,6 +85,25 @@ namespace RDTY
 		time_gone = 0;
 	}
 
+	// void Transition::start2
+	// (
+	// 	const size_t& duration,
+	// 	std::function<void(const size_t&)> _process_callback
+	// )
+	// {
+	// 	if (!active)
+	// 	{
+	// 		active = 1;
+
+	// 		TransitionStack::push_s(this);
+	// 	}
+
+	// 	duration = _duration;
+	// 	process_callback = _process_callback;
+	// 	end_callback = idle_function;
+	// 	time_gone = 0;
+	// }
+
 	void Transition::update (const size_t& frame_time)
 	{
 		time_gone += frame_time;

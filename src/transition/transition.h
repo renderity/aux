@@ -3,11 +3,11 @@
 
 
 
-// size_t
-#include <cstddef>
+#include <cstddef> // size_t
 // uint8_t
 #include <cstdint>
 // #include <mutex>
+#include <functional>
 
 
 
@@ -38,6 +38,7 @@ namespace RDTY
 		void cancel2 (void);
 		void start (const size_t&, callback_t, callback_t);
 		void start2 (const size_t&, callback_t);
+		void start2 (const size_t&, std::function<void(const size_t&)>);
 		void update (const size_t&);
 	};
 }
