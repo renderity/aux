@@ -1,20 +1,13 @@
 {
 	"variables":
 	{
-		"gcc-x64":
-		{
-			"REPS": "/home/denis/reps"
-		},
+		"REPS": "$(ROOT)/reps"
+	},
 
-		"clang-wasm32":
+	"variables2":
+	{
+		"clang-wasm32|clang-wasm64":
 		{
-			"REPS": "/home/denis/reps",
-			"FLAGS_ADD": "-matomics -mbulk-memory"
-		},
-
-		"clang-wasm64":
-		{
-			"REPS": "/home/denis/reps",
 			"FLAGS_ADD": "-matomics -mbulk-memory"
 		}
 	},
